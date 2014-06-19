@@ -1,4 +1,4 @@
-/*! handshake-js.js - 0.0.1 - 2014-05-19 - scottmotte */
+/*! handshake-js.js - 0.0.1 - 2014-06-19 - scottmotte */
 (function(exports){
   var Handshake = function() {
     if(!(this instanceof Handshake)){
@@ -19,9 +19,9 @@
       this.app_name               = this.script.getAttribute("data-app_name");
       this.root_url               = this.script.getAttribute("data-root_url");
       this.request_intro          = this.script.getAttribute("data-request_intro") || "This is the easiest signup process.<br/>Just enter your email address.";
-      this.request_button         = this.script.getAttribute("data-request_button") || "Create Account";
+      this.request_button         = this.script.getAttribute("data-request_button") || "Verify Email";
       this.confirm_intro          = this.script.getAttribute("data-confirm_intro") || "Go ahead and check your email.<br/>Enter the code you received here.";
-      this.confirm_button         = this.script.getAttribute("data-confirm_button") || "Login";
+      this.confirm_button         = this.script.getAttribute("data-confirm_button") || "Create Account";
       this.confirm_url            = this.script.getAttribute("data-confirm_url") || "/login/request.json";
 
       if (!this.app_name || this.app_name.length < 1) {
@@ -82,6 +82,7 @@
     this.email_field.id                 = "handshake-email-field-id-"+this.uuid;
     this.email_field.type               = "email";
     this.email_field.placeholder        = "email";
+    this.email_field.autocomplete       = "email";
 
     return this.email_form.appendChild(this.email_field);
   };

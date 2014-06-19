@@ -35,6 +35,7 @@
     this.email_field.id                 = "handshake-email-field-id-"+this.uuid;
     this.email_field.type               = "email";
     this.email_field.placeholder        = "email";
+    this.email_field.autocomplete       = "email";
 
     return this.email_form.appendChild(this.email_field);
   };
